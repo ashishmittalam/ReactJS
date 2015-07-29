@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React</title>
+    <script src="http://fb.me/react-0.13.1.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/jsx">
+
+		var FancyButton = React.createClass({
+			render: function() {
+				return <button onClick={this.props.onClick}>{this.props.text}</button>
+			}
+		});
+
+		var HelloWorld = React.createClass({
+			getInitialState: function() {
+				return {
+					counter: 0
+				};
+			},
+			
+			increment: function() {
+				this.setState({ counter: this.state.counter + 1 });
+			},
+
+			render: function() {
+				return <div>
+					<div>{this.state.counter}</div>
+					<FancyButton text="Increment!" onClick={this.increment} />
+				</div>;
+			}
+		});
+		
+		React.render(<HelloWorld />, document.getElementById('example'));
+    </script>
+  </body>
+</html>
