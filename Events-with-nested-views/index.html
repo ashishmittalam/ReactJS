@@ -4,6 +4,7 @@
     <title>Hello React</title>
     <script src="http://fb.me/react-0.13.1.js"></script>
     <script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
     <div id="example"></div>
@@ -27,7 +28,7 @@
 			},
 
 			render: function() {
-				return <div>
+				return <div className="counter">
 					<div>{this.state.counter}</div>
 					<FancyButton text="Increment!" onClick={this.increment} />
 				</div>;
